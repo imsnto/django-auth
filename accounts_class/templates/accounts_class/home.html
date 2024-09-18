@@ -1,0 +1,14 @@
+<h1> Home </h1>
+<p> Welcome to the home page! </p>
+
+{% if user.is_authenticated %}
+    <p> You are logged in as {{ user.username }} </p>
+    <form action="{% url 'accounts_class:logout' %}" method="post">
+        {% csrf_token %}
+        <button type="submit">Log out</button>
+    </form>
+    
+{% else %}
+    <a href="{% url 'accounts_class:login' %}">Login</a> |
+    <a href="{% url 'accounts_class:register' %}">Register</a>
+{% endif %}

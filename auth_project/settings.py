@@ -38,6 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'accounts_function',
+    'accounts_class',
+
 ]
 
 MIDDLEWARE = [
@@ -122,3 +124,8 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+# class based views
+LOGIN_REDIRECT_URL = 'accounts_class:home'
+LOGOUT_REDIRECT_URL = 'accounts_class:login'
